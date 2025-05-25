@@ -32,50 +32,40 @@ function xm = bissecao(f, a, b, epsilon1, epsilon2, nMax)
     end
 
     printf("-----------------------------------------------\n");
-    printf("Aproximadamente: %8.6f é a raiz, com %2d iterações\n", xm, k);
-
-    // --- Gerando gráfico da função com destaque do intervalo [1,2] ---
-    x = linspace(-3, 3, 500);
-    y = f(x);
-
-    clf();
-    //Plota a função f(x) em azul                   
-    plot(x, y, 'b-');         
-    xgrid();                  
-    xlabel("x");
-    ylabel("f(x)");
-    titulo = msprintf("Gráfico da função com intervalo [%g, %g] destacado", a, b);
-    title(titulo);
-
-    //Destaca intervalo [a, b]
-    xx = linspace(a, b, 100);
-    yy = f(xx);
-    plot(xx, yy, 'r', 'LineWidth', 5);  //linha vermelha no intervalo [1,2]
-    plot(xm, f(xm), 'ko');              //marca ponto da raiz aproximada
+    printf("Aproximadamente: %8.6f é a raiz, com %2d iterações\n", xm, k);            //marca ponto da raiz aproximada
 endfunction
 
 //-------------Problema 1.1: Obter uma aproximação às raízes das funções----------------
 //1. 𝐟(𝐱) = 𝐱^𝟐 − 𝟑 no intervalo [𝟏; 𝟐], com 𝛜 = 𝟏𝟎**-6
-printf("PROBLEMA 1.1 NÚMERO 1\n");
+//printf("PROBLEMA 1.1 NÚMERO 1\n");
 //deff('y = f(x)', 'y = x^2 - 3');
 //raiz = bissecao(f, 1.0, 2.0, 1e-6, 1e-6, 100);
 
 //2. g(𝐱) = 𝐱^𝟐 + 𝐥𝐧(𝐱) no intervalo [𝟎,𝟓; 𝟏], com 𝛜 = 𝟏𝟎^−𝟓
-printf("PROBLEMA 1.1 NÚMERO 2\n");
+//printf("PROBLEMA 1.1 NÚMERO 2\n");
 //deff('y = g(x)', 'y = x^2 + log(x)');   
-//raiz = bissecao(g, 0.5, 1.0, 1e-5, 1e-5, 100);
+//raiz = bissecao(g, 5, 5, 1e-5, 1e-5, 100);
 
 //-------------Problema 1.2: Obter uma aproximação para primeira raiz positiva da função:----------------
 //1. 𝐟(𝐱) = 𝐞^−𝐱 − 𝐬𝐞𝐧(𝐱), com 𝛜 = 𝟏𝟎^−𝟓
-printf("PROBLEMA 1.2 NÚMERO 1\n");
+//printf("PROBLEMA 1.2 NÚMERO 1\n");
+//deff('y = f(x)', 'y = exp(-x) - sin(x)');
+//raiz121 = bissecao(f, 0.5, 1.0, 1e-5, 1e-5, 100);
 //2. 𝐟(𝐱) = 𝐱 𝐥𝐧(𝐱) − 𝟑.𝟐 no intervalo [𝟐, 𝟑], com 𝛜 = 𝟏𝟎^−𝟔
-printf("PROBLEMA 1.2 NÚMERO 2\n");
+//printf("PROBLEMA 1.2 NÚMERO 2\n");
+//deff('y = f(x)', 'y = x * log(x) - 3.2');
+//raiz122 = bissecao(f, 2.0, 3.0, 1e-6, 1e-6, 100);
 
 //-------------Problema 1.3: Obter uma aproximação às raízes das funções:---------------------------------
 //1. 𝐟(𝐱) = 𝐜𝐨𝐬(𝐱) + 𝐱 no intervalo [−𝟏, 𝟎], com 𝛜 = 𝟏𝟎^−𝟓
-printf("PROBLEMA 1.3 NÚMERO 1\n");
+//printf("PROBLEMA 1.3 NÚMERO 1\n");
+//deff("y=f(x)", "y=cos(x)+x");
+//raiz131 = bissecao(f, -1.0, 0.0, 1e-5, 1e-5, 100);
+
 //2. g(𝐱) = 𝐞^𝐱 + 𝐱 no intervalo [−𝟏, 𝟎], com 𝛜 = 𝟏𝟎^−𝟓
 printf("PROBLEMA 1.3 NÚMERO 2\n");
+deff("y=g(x)", "y=exp(x)+x");
+raiz132 = bissecao(g, -1.0, 0.0, 1e-5, 1e-5, 100);
 
 //-------------Problema 1.4: Obter uma aproximação às raízes----------------
 //1. A raiz cúbica de 𝐟(𝐱) = 𝐱^𝟑 − 𝟓, com 𝛜 = 𝟏𝟎^−𝟔

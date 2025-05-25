@@ -1,8 +1,9 @@
 import numpy as np
+import math
 
 # Exercício
 def f(x):
-    return x**2 + np.log(x)
+    return  math.exp(-x) - math.sin(x)
 
 def bisection_method(a, b, e, nMax=100):
     k = 0
@@ -88,7 +89,7 @@ e = 10**-5
 # ---------- Chamada do método BISECÇÃO ----------
 raiz, iteracoes = bisection_method(a, b, e)
 # ---------- Chamada do método  FALSA-POSIÇÃO ----------
-raiz, iteracoes = false_position_method(a, b, e)
+#raiz, iteracoes = false_position_method(a, b, e)
 # ---------- Chamada do método NEWTON-RAPHSON ----------
-raiz, iteracoes = newton_raphson_method(0.2, e)
+#raiz, iteracoes = newton_raphson_method(0.2, e)
 
