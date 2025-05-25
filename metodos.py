@@ -3,7 +3,7 @@ import math
 
 # Exercício
 def f(x):
-    return  math.exp(-x) - math.sin(x)
+    return  math.exp(-x**2) - math.cos(x)
 
 def bisection_method(a, b, e, nMax=100):
     k = 0

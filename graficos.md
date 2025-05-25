@@ -182,7 +182,189 @@ plot(x_total, zeros(x_total), "k--");
 // raiz_aprox = -0.567143; // Exemplo hipotético
 // plot(raiz_aprox, g(raiz_aprox), "ko", "MarkerSize", 8, "MarkerFaceColor", "k");
 
+# EXERCICIO 1.4 (1)
+clc;
+clear;
+funcprot(0);
 
+// Função
+function y = f(x)
+    y = x^3 - 5;
+endfunction
+
+// Raiz aproximada
+raiz_aprox = 1.709975;
+
+// Intervalos para o gráfico
+x_total = linspace(0, 2.5, 1000);
+y_total = f(x_total);
+
+x_destacado = linspace(1.0, 2.0, 300);
+y_destacado = f(x_destacado);
+
+// Plot do gráfico geral
+clf();
+plot(x_total, y_total, "b-", "LineWidth", 2);
+xgrid();
+xtitle("f(x) = x^3 - 5 com destaque no intervalo [1.0, 2.0]", "x", "f(x)");
+legend(["f(x)", "Intervalo próximo à raiz"]);
+
+// Destaque do intervalo da raiz
+plot(x_destacado, y_destacado, "r-", "LineWidth", 3);
+
+// Marcar a raiz aproximada
+plot(raiz_aprox, f(raiz_aprox), "ko", "MarkerSize", 8, "MarkerFaceColor", "k");
+
+// Linha horizontal em y = 0
+plot(x_total, zeros(x_total), "k--");
+# EXERCICIO 1.4 (2)
+clc;
+clear;
+funcprot(0);
+
+// Função
+function y = g(x)
+    y = x^3 - 5*x^2 + x + 3;
+endfunction
+
+// Raiz aproximada
+raiz_aprox = -0.645751;
+
+// Intervalos para o gráfico
+x_total = linspace(-3, 3, 1000);
+y_total = g(x_total);
+
+x_destacado = linspace(-2.0, 0.0, 300);
+y_destacado = g(x_destacado);
+
+// Plot da função
+clf();
+plot(x_total, y_total, "b-", "LineWidth", 2);
+xgrid();
+xtitle("g(x) = x^3 - 5x^2 + x + 3 com destaque no intervalo [-2, 0]", "x", "g(x)");
+legend(["g(x)", "Intervalo [-2, 0]"]);
+
+// Destaque em vermelho do intervalo [-2, 0]
+plot(x_destacado, y_destacado, "r-", "LineWidth", 3);
+
+// Marcar a raiz aproximada
+plot(raiz_aprox, g(raiz_aprox), "ko", "MarkerSize", 8, "MarkerFaceColor", "k");
+
+// Linha horizontal em y = 0
+plot(x_total, zeros(x_total), "k--");
+
+# EXERCICIOS 1.5 (1)
+clc;
+clear;
+funcprot(0);
+
+// Definição da função f(x) = sin(x) - tan(x)
+function y = f(x)
+    y = sin(x) - tan(x);
+endfunction
+
+// Raiz aproximada
+raiz_aprox = 3.141594;
+
+// Intervalo geral para o gráfico
+x_total = linspace(2.5, 4.5, 1000);
+y_total = f(x_total);
+
+// Intervalo a destacar: [3, 4]
+x_destacado = linspace(3, 4, 300);
+y_destacado = f(x_destacado);
+
+// Iniciar o gráfico
+clf();
+plot(x_total, y_total, "b-", "LineWidth", 2);
+xgrid();
+xtitle("f(x) = sin(x) - tan(x) com destaque no intervalo [3, 4]", "x", "f(x)");
+legend(["f(x)", "Intervalo [3, 4]"]);
+
+// Destacar o intervalo [3, 4] com linha vermelha
+plot(x_destacado, y_destacado, "r-", "LineWidth", 3);
+
+// Marcar a raiz aproximada com ponto preto
+plot(raiz_aprox, f(raiz_aprox), "ko", "MarkerSize", 8, "MarkerFaceColor", "k");
+
+// Linha horizontal em y = 0
+plot(x_total, zeros(x_total), "k--");
+
+# EXERCICIOS 1.5 (2)
+clc;
+clear;
+funcprot(0);
+
+// Definir a função f(x) = exp(-x^2) - cos(x)
+function y = f(x)
+    y = exp(-x.^2) - cos(x);
+endfunction
+
+// Raiz aproximada
+raiz_aprox = 1.447418;
+
+// Intervalo total para o gráfico (mais amplo para visualizar melhor o comportamento da função)
+x_total = linspace(0.5, 2.5, 1000);
+y_total = f(x_total);
+
+// Intervalo a destacar: [1, 2]
+x_destacado = linspace(1, 2, 300);
+y_destacado = f(x_destacado);
+
+// Iniciar o gráfico
+clf();
+plot(x_total, y_total, "b-", "LineWidth", 2);
+xgrid();
+xtitle("f(x) = exp(-x^2) - cos(x) com destaque no intervalo [1, 2]", "x", "f(x)");
+legend(["f(x)", "Intervalo [1, 2]"]);
+
+// Destacar o intervalo [1, 2] com linha vermelha
+plot(x_destacado, y_destacado, "r-", "LineWidth", 3);
+
+// Marcar a raiz aproximada com ponto preto
+plot(raiz_aprox, f(raiz_aprox), "ko", "MarkerSize", 8, "MarkerFaceColor", "k");
+
+// Linha horizontal em y = 0
+plot(x_total, zeros(x_total), "k--");
+
+# EXERCICIOS 1.6 (1)
+clc;
+clear;
+funcprot(0);
+
+// Definir a função g(x) = x^3 - x - 1
+function y = g(x)
+    y = x.^3 - x - 1;
+endfunction
+
+// Raiz aproximada
+raiz_aprox = 1.324718;
+
+// Intervalo total para o gráfico (amplo)
+x_total = linspace(0.5, 2.5, 1000);
+y_total = g(x_total);
+
+// Intervalo destacado [1, 2]
+x_destacado = linspace(1, 2, 300);
+y_destacado = g(x_destacado);
+
+// Iniciar o gráfico
+clf();
+plot(x_total, y_total, "b-", "LineWidth", 2);
+xgrid();
+xtitle("g(x) = x^3 - x - 1 com destaque no intervalo [1, 2]", "x", "g(x)");
+legend(["g(x)", "Intervalo [1, 2]"]);
+
+// Destacar intervalo [1, 2] com linha vermelha
+plot(x_destacado, y_destacado, "r-", "LineWidth", 3);
+
+// Marcar a raiz aproximada com ponto preto
+plot(raiz_aprox, g(raiz_aprox), "ko", "MarkerSize", 8, "MarkerFaceColor", "k");
+
+// Linha horizontal em y = 0
+plot(x_total, zeros(x_total), "k--");
+
+# EXERCICIOS 1.6 (2)
 
 
 

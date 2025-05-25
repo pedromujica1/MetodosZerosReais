@@ -63,30 +63,41 @@ endfunction
 //raiz131 = bissecao(f, -1.0, 0.0, 1e-5, 1e-5, 100);
 
 //2. g(𝐱) = 𝐞^𝐱 + 𝐱 no intervalo [−𝟏, 𝟎], com 𝛜 = 𝟏𝟎^−𝟓
-printf("PROBLEMA 1.3 NÚMERO 2\n");
-deff("y=g(x)", "y=exp(x)+x");
-raiz132 = bissecao(g, -1.0, 0.0, 1e-5, 1e-5, 100);
+//printf("PROBLEMA 1.3 NÚMERO 2\n");
+//deff("y=g(x)", "y=exp(x)+x");
+//raiz132 = bissecao(g, -1.0, 0.0, 1e-5, 1e-5, 100);
 
 //-------------Problema 1.4: Obter uma aproximação às raízes----------------
 //1. A raiz cúbica de 𝐟(𝐱) = 𝐱^𝟑 − 𝟓, com 𝛜 = 𝟏𝟎^−𝟔
-printf("PROBLEMA 1.4 NÚMERO 1\n");
+//printf("PROBLEMA 1.4 NÚMERO 1\n");
+//deff("y=f(x)", "y=x^3-5");
+//raiz141 = bissecao(f, 1.0, 2.0, 1e-6, 1e-6, 100);
 //2. A raiz negativa de g(𝐱) = 𝐱^𝟑 − 𝟓𝐱^𝟐 + 𝐱 + 𝟑, com 𝛜 = 𝟏𝟎^−𝟔
-printf("PROBLEMA 1.4 NÚMERO 2\n");
+//printf("PROBLEMA 1.4 NÚMERO 2\n");
+//deff("y=g(x)", "y=x^3-5*x^2+x+3");
+//raiz142 = bissecao(g, -2.0, 0.0, 1e-6, 1e-6, 100);
 
 //-------------Problema 1.5: Obter uma aproximação à raiz de----------------
 //1. 𝐟(𝐱) = 𝐬𝐞𝐧(𝐱) − 𝐭𝐠(𝐱) no intervalo [𝟑, 𝟒], com 𝛜 = 𝟏𝟎^−𝟓
-printf("PROBLEMA 1.5 NÚMERO 1\n");
-
+//printf("PROBLEMA 1.5 NÚMERO 1\n");
+//deff("y=f(x)", "y=sin(x)-tan(x)");
+//raiz151 = bissecao(f, 3.0, 4.0, 1e-5, 1e-5, 100);
 
 //2. 𝐟(𝐱) = 𝐞^−𝐱^𝟐 − 𝐜𝐨𝐬(𝐱) no intervalo [𝟏, 𝟐], com 𝛜 = 𝟏𝟎^−𝟓
-printf("PROBLEMA 1.5 NÚMERO 2\n");
+//printf("PROBLEMA 1.5 NÚMERO 2\n");
+//deff("y=f(x)", "y=exp(-x^2)-cos(x)");
+//raiz152 = bissecao(f, 1.0, 2.0, 1e-5, 1e-5, 100);
 
 //-------------Problema 1.6: Obter uma aproximação às raízes das funções----------------
 //1. 𝐠(𝐱) = 𝐱^𝟑 − 𝐱 − 𝟏 no intervalo [𝟏, 𝟐], com 𝛜 = 𝟏𝟎^−𝟔
-printf("PROBLEMA 1.6 NÚMERO 1\n");
+//printf("PROBLEMA 1.6 NÚMERO 1\n");
+//deff("y=g(x)", "y=x^3-x-1");
+//raiz161 = bissecao(g, 1.0, 2.0, 1e-6, 1e-6, 100);
 
 //2. 𝐡(𝐱) = 𝟒𝐬𝐞𝐧(𝐱) − 𝐞^𝐱 no intervalo [𝟎, 𝟏], com 𝛜 = 𝟏𝟎^−𝟓
-printf("PROBLEMA 1.6 NÚMERO 2\n");
+//printf("PROBLEMA 1.6 NÚMERO 2\n");
+//deff("y=h(x)", "y=4*sin(x)-exp(x)");
+//raiz162 = bissecao(h, 0.0, 1.0, 1e-5, 1e-5, 100);
 //////////////////////////////////////////////////////////////////////////////////////
 //------------------------------ PARTE 2 --------------------------------------------
 //////////////////////////////////////////////////////////////////////////////////////
