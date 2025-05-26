@@ -3,6 +3,9 @@
 //Resolvendo usando o Método da Falsa Posição
 
 clear(); clc();
+h = 300; F = 0.8; D = 14; C = 1200; //constantes exercicio 2.2
+d = 10 //constante exercicio 2.3
+O = 5 //constante exercicio 2.4
 
 printf("*** APROXIMAÇÃO PELO MÉTODO DA FALSA-POSIÇÃO ***\n\n")
 

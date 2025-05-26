@@ -5,6 +5,9 @@
 //Problema 1.1: Obter uma aproximação às raízes das funções:
 //1. 𝐟(𝐱) = 𝐱^𝟐 − 𝟑 no intervalo [𝟏; 𝟐], com 𝛜 = 𝟏𝟎**-6
 clear(); clc();
+h = 300; F = 0.8; D = 14; C = 1200; //constantes exercicio 2.2
+d = 10 //constante exercicio 2.3
+O = 5 //constante exercicio 2.4
 
 printf("*** APROXIMAÇÃO PELO MÉTODO DA SECANTE ***\n\n")
 function [xk, k] = secante(f, x0, x1, epsilon1, epsilon2, nMax)

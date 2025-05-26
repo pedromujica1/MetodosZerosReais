@@ -3,7 +3,9 @@
 //Resolvendo usando o Método de Newton-Raphson
 
 clear(); clc();
-
+h = 300; F = 0.8; D = 14; C = 1200; //constantes exercicio 2.2
+d = 10 //constante exercicio 2.3
+O = 5 //constante exercicio 2.4
 printf("*** APROXIMAÇÃO PELO MÉTODO DE NEWTON-RAPHSON ***\n\n")
 
 function [xk, k] = newton_raphson(f, f1, a, b, epsilon1, epsilon2, nMax)
