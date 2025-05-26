@@ -365,6 +365,169 @@ plot(raiz_aprox, g(raiz_aprox), "ko", "MarkerSize", 8, "MarkerFaceColor", "k");
 plot(x_total, zeros(x_total), "k--");
 
 # EXERCICIOS 1.6 (2)
+clc;
+clear;
+funcprot(0);
+
+// Definir a função h(x) = 4*sin(x) - exp(x)
+function y = h(x)
+    y = 4 * sin(x) - exp(x);
+endfunction
+
+// Raiz aproximada
+raiz_aprox = 0.370560;
+
+// Intervalo total para melhor visualização
+x_total = linspace(-0.5, 1.5, 1000);
+y_total = h(x_total);
+
+// Intervalo destacado [0, 1]
+x_destacado = linspace(0, 1, 300);
+y_destacado = h(x_destacado);
+
+// Iniciar o gráfico
+clf();
+plot(x_total, y_total, "b-", "LineWidth", 2);
+xgrid();
+xtitle("h(x) = 4*sin(x) - e^x com destaque no intervalo [0, 1]", "x", "h(x)");
+legend(["h(x)", "Intervalo [0, 1]"]);
+
+// Destacar intervalo [0, 1] com linha vermelha
+plot(x_destacado, y_destacado, "r-", "LineWidth", 3);
+
+// Marcar a raiz aproximada com ponto preto
+plot(raiz_aprox, h(raiz_aprox), "ko", "MarkerSize", 8, "MarkerFaceColor", "k");
+
+// Linha horizontal em y = 0
+plot(x_total, zeros(x_total), "k--");
+
+# Exercicio 2.1
+clc;
+clear;
+funcprot(0);
+
+// Definindo a função f(x)
+function y = f(x)
+    y = 230*x.^4 + 18*x.^3 + 9*x.^2 - 221*x - 9;
+endfunction
+
+// Raiz conhecida
+raiz_aprox = -0.040656;
+
+// Intervalo maior para análise visual
+x_total = linspace(-0.5, 1.5, 1000);
+y_total = f(x_total);
+
+// Intervalo [−0.3 ; 1.1] a ser destacado
+x_destacado = linspace(-0.3, 1.1, 500);
+y_destacado = f(x_destacado);
+
+// Plot da função
+clf();
+plot(x_total, y_total, "b-", "LineWidth", 2);
+xgrid();
+xtitle("f(x) = 230x^4 + 18x^3 + 9x^2 - 221x - 9", "x", "f(x)");
+legend(["f(x)", "Intervalo [-0.3 ; 1.1]"]);
+
+// Destacar o intervalo onde há mudança de sinal
+plot(x_destacado, y_destacado, "r-", "LineWidth", 3);
+
+// Marcar a raiz aproximada
+plot(raiz_aprox, f(raiz_aprox), "ko", "MarkerSize", 8, "MarkerFaceColor", "k");
+
+// Linha horizontal em y = 0
+plot(x_total, zeros(x_total), "k--");
+
+# EXERCICIO 2.2
+clc;
+clear;
+funcprot(0);
+
+// Constantes
+h = 300;
+F = 0.8;
+D = 14;
+C = 1200;
+
+// Função com operações elemento a elemento
+deff('y = f(A)', 'y = (%pi*(h./cos(A)).^2 .* F) ./ (0.5*%pi*D^2*(1 + sin(A) - 0.5*cos(A))) - C');
+
+// Geração de pontos para o gráfico
+A = linspace(0, %pi/25, 200); // vetor de ângulos de 0 a pi/25
+Y = f(A); // avaliação da função
+
+// Plotando o gráfico
+plot(A, Y, 'b-');
+xlabel("A (radianos)");
+ylabel("f(A)");
+title("Gráfico da função f(A) no intervalo [0, π/25]");
+xgrid();
+
+// Linha horizontal y = 0
+plot([0, %pi/25], [0, 0], 'r--'); // linha vermelha tracejada no eixo x
+
+# EXERCICIO 2.3
+clc;
+clear;
+funcprot(0);
+
+// Valor de d com base na raiz aproximada fornecida
+t_raiz = 5.311432;
+d = 7 * (2.0 - 0.9^t_raiz);
+
+// Função p(t)
+deff('y = p(t)', 'y = 7*(2.0 - 0.9.^t) - d');
+
+// Geração de pontos para gráfico mais amplo
+t_total = linspace(-2, 15, 1000); // intervalo mais amplo
+y_total = p(t_total);
+
+// Geração de pontos para o intervalo [0, 10]
+t_dest = linspace(0, 10, 300);
+y_dest = p(t_dest);
+
+// Plot da função completa
+plot(t_total, y_total, 'b-');
+xlabel("t");
+ylabel("p(t)");
+title("Gráfico da função p(t) = 7(2 - 0.9^t) - d");
+xgrid();
+
+// Linha horizontal y = 0
+plot([-2, 15], [0, 0], 'r--');
+
+// Destaque da curva no intervalo [0, 10]
+plot(t_dest, y_dest, 'r-', 'LineWidth', 2);
+
+// Marcador na raiz aproximada
+plot(t_raiz, p(t_raiz), 'ko', 'MarkerSize', 8); // ponto preto
+
+# EXERCICIO 2.4
+
+clc;
+clear;
+funcprot(0);
+
+// Constante O (nível de oxigênio desejado)
+O = 5;
+
+// Função C(d)
+deff('y = C(d)', 'y = 10 - 20*(exp(-0.2*d) - exp(-0.75*d)) - O');
+
+// Intervalo de d para visualização
+d_vals = linspace(0, 5, 400);
+y_vals = C(d_vals);
+
+// Plot da função
+plot(d_vals, y_vals, 'b-', 'LineWidth', 2);
+xlabel("d (km)");
+ylabel("C(d)");
+title("Gráfico da função C(d) = 10 - 20(e^{-0.2d} - e^{-0.75d}) - O, com O = 5");
+xgrid();
+
+// Linha horizontal em y = 0 (onde procuramos a raiz)
+plot([0, 5], [0, 0], 'r--'); // linha tracejada em y=0
+
 
 
 

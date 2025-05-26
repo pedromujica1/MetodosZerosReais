@@ -2,34 +2,32 @@ clc;
 clear;
 funcprot(0);
 
-// Definir a função h(x) = 4*sin(x) - exp(x)
-function y = h(x)
-    y = 4 * sin(x) - exp(x);
-endfunction
+// Constantes
+h = 300;
+F = 0.8;
+D = 14;
+C = 1200;
 
-// Raiz aproximada
-raiz_aprox = 0.370560;
+// Função com operações elemento a elemento
+deff('y = f(A)', 'y = (%pi*(h./cos(A)).^2 .* F) ./ (0.5*%pi*D^2*(1 + sin(A) - 0.5*cos(A))) - C');
 
-// Intervalo total para melhor visualização
-x_total = linspace(-0.5, 1.5, 1000);
-y_total = h(x_total);
+// Intervalo amplo para visualizar toda a curva
+A_full = linspace(-0.2, 0.2, 1000);
+Y_full = f(A_full);
 
-// Intervalo destacado [0, 1]
-x_destacado = linspace(0, 1, 300);
-y_destacado = h(x_destacado);
+// Intervalo específico [0, π/25] para destacar
+A_dest = linspace(0, %pi/25, 200);
+Y_dest = f(A_dest);
 
-// Iniciar o gráfico
-clf();
-plot(x_total, y_total, "b-", "LineWidth", 2);
+// Plot da função completa
+plot(A_full, Y_full, 'b-');
+xlabel("A (radianos)");
+ylabel("f(A)");
+title("Gráfico da função f(A) com destaque no intervalo [0, π/25]");
 xgrid();
-xtitle("h(x) = 4*sin(x) - e^x com destaque no intervalo [0, 1]", "x", "h(x)");
-legend(["h(x)", "Intervalo [0, 1]"]);
 
-// Destacar intervalo [0, 1] com linha vermelha
-plot(x_destacado, y_destacado, "r-", "LineWidth", 3);
+// Adiciona linha horizontal y = 0
+plot([-0.2, 0.2], [0, 0], 'r--');
 
-// Marcar a raiz aproximada com ponto preto
-plot(raiz_aprox, h(raiz_aprox), "ko", "MarkerSize", 8, "MarkerFaceColor", "k");
-
-// Linha horizontal em y = 0
-plot(x_total, zeros(x_total), "k--");
+// Adiciona destaque sobre o intervalo [0, π/25]
+plot(A_dest, Y_dest, 'r-', 'LineWidth', 2); // linha vermelha mais grossa
