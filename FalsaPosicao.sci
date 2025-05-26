@@ -2,7 +2,7 @@
 //Alunos: Pedro Miotto Mujica, Thiago Oliveira Dupim, Vinicius Castaman, Gabriel Costa
 //Resolvendo usando o Método da Falsa Posição
 
-clear(); clc();
+clear();
 h = 300; F = 0.8; D = 14; C = 1200; //constantes exercicio 2.2
 d = 10 //constante exercicio 2.3
 O = 5 //constante exercicio 2.4
@@ -33,33 +33,49 @@ endfunction
 
 //-------------Problema 1.1: Obter uma aproximação às raízes das funções----------------
 //1. 𝐟(𝐱) = 𝐱^𝟐 − 𝟑 no intervalo [𝟏; 𝟐], com 𝛜 = 𝟏𝟎**-6
-printf("PROBLEMA 1.1 NÚMERO 1\n");
+//printf("PROBLEMA 1.1 NÚMERO 1\n");
 //deff('y=f(x)', 'y=x^2-3');
 //[xk, k] = falsa_posicao(f, 1.0, 2.0, 1e-6, 1e-6, 100);
 
 //2. g(𝐱) = 𝐱^𝟐 + 𝐥𝐧(𝐱) no intervalo [𝟎,𝟓; 𝟏], com 𝛜 = 𝟏𝟎^−𝟓
-printf("PROBLEMA 1.1 NÚMERO 2\n");
-deff('y = g(x)', 'y = x^2 + log(x)');   
-[xk,k] = falsa_posicao(g, 0.5, 1.0, 1e-5, 1e-5, 100);
+//printf("PROBLEMA 1.1 NÚMERO 2\n");
+//deff('y = g(x)', 'y = x^2 + log(x)');   
+//[xk,k] = falsa_posicao(g, 0.5, 1.0, 1e-5, 1e-5, 100);
 
 
 //-------------Problema 1.2: Obter uma aproximação para primeira raiz positiva da função:----------------
 //1. 𝐟(𝐱) = 𝐞^−𝐱 − 𝐬𝐞𝐧(𝐱), com 𝛜 = 𝟏𝟎^−𝟓
-printf("PROBLEMA 1.2 NÚMERO 1\n");
+//printf("PROBLEMA 1.2 NÚMERO 1\n");
+//deff('y = f(x)', 'y = exp(-x)-sin(x)')
+//[xk,k] = falsa_posicao(f, 0.5, 1.0, 1e-5, 1e-5, 100)
+
 //2. 𝐟(𝐱) = 𝐱 𝐥𝐧(𝐱) − 𝟑.𝟐 no intervalo [𝟐, 𝟑], com 𝛜 = 𝟏𝟎^−𝟔
-printf("PROBLEMA 1.2 NÚMERO 2\n");
+//printf("PROBLEMA 1.2 NÚMERO 2\n");
+//deff('y = f(x)', 'y = x * log(x) - 3.2')
+//[xk, k] = falsa_posicao(f, 2, 3, 1e-6, 1e-6, 100)
 
 //-------------Problema 1.3: Obter uma aproximação às raízes das funções:---------------------------------
 //1. 𝐟(𝐱) = 𝐜𝐨𝐬(𝐱) + 𝐱 no intervalo [−𝟏, 𝟎], com 𝛜 = 𝟏𝟎^−𝟓
-printf("PROBLEMA 1.3 NÚMERO 1\n");
+//printf("PROBLEMA 1.3 NÚMERO 1\n");
+//deff('y = f(x)', 'y = cos(x) + x')
+//[xk, k] = falsa_posicao(f, -1, 0, 1e-5, 1e-5, 100)
 //2. g(𝐱) = 𝐞^𝐱 + 𝐱 no intervalo [−𝟏, 𝟎], com 𝛜 = 𝟏𝟎^−𝟓
-printf("PROBLEMA 1.3 NÚMERO 2\n");
+//printf("PROBLEMA 1.3 NÚMERO 2\n");
+//deff('y = g(x)', 'y = exp(x)+x')
+/* DEU DIFERENTE 
+*/
+//[xk, k] = falsa_posicao(g, -1.0, 0.0, 1e-5, 1e-5, 100)
 
 //-------------Problema 1.4: Obter uma aproximação às raízes----------------
 //1. A raiz cúbica de 𝐟(𝐱) = 𝐱^𝟑 − 𝟓, com 𝛜 = 𝟏𝟎^−𝟔
-printf("PROBLEMA 1.4 NÚMERO 1\n");
+//printf("PROBLEMA 1.4 NÚMERO 1\n");
+//deff('y = f(x)', 'y = x^3-5')
+//[xk, k] = falsa_posicao(f, 1.0, 2.0, 1e-5, 1e-5, 100)
+
 //2. A raiz negativa de g(𝐱) = 𝐱^𝟑 − 𝟓𝐱^𝟐 + 𝐱 + 𝟑, com 𝛜 = 𝟏𝟎^−𝟔
 printf("PROBLEMA 1.4 NÚMERO 2\n");
+deff('y = g(x)','y = x^3-5*x^2+x+3')
+[xk, k] = falsa_posicao(g, -2.0, 0.0, 1e-6, 1e-6, 100)
 
 //-------------Problema 1.5: Obter uma aproximação à raiz de----------------
 //1. 𝐟(𝐱) = 𝐬𝐞𝐧(𝐱) − 𝐭𝐠(𝐱) no intervalo [𝟑, 𝟒], com 𝛜 = 𝟏𝟎^−𝟓
