@@ -52,8 +52,6 @@
 # EXERCICIO 1.2 (1)
 
 
-// Resolver o problema 1.2 com intervalo [0.5, 1.0] e epsilon = 10^-5
-raiz = bissecao(f, 0.5, 1.0, 1e-5, 1e-5, 100);
 
 // Plotar o gráfico
 x = linspace(0, 2, 500);
