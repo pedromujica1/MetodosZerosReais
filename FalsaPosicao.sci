@@ -73,43 +73,58 @@ endfunction
 //[xk, k] = falsa_posicao(f, 1.0, 2.0, 1e-5, 1e-5, 100)
 
 //2. A raiz negativa de g(𝐱) = 𝐱^𝟑 − 𝟓𝐱^𝟐 + 𝐱 + 𝟑, com 𝛜 = 𝟏𝟎^−𝟔
-printf("PROBLEMA 1.4 NÚMERO 2\n");
-deff('y = g(x)','y = x^3-5*x^2+x+3')
-[xk, k] = falsa_posicao(g, -2.0, 0.0, 1e-6, 1e-6, 100)
+//printf("PROBLEMA 1.4 NÚMERO 2\n");
+//deff('y = g(x)','y = x^3-5*x^2+x+3')
+//[xk, k] = falsa_posicao(g, -2.0, 0.0, 1e-6, 1e-6, 100)
 
 //-------------Problema 1.5: Obter uma aproximação à raiz de----------------
 //1. 𝐟(𝐱) = 𝐬𝐞𝐧(𝐱) − 𝐭𝐠(𝐱) no intervalo [𝟑, 𝟒], com 𝛜 = 𝟏𝟎^−𝟓
-printf("PROBLEMA 1.5 NÚMERO 1\n");
+//printf("PROBLEMA 1.5 NÚMERO 1\n");
+//deff('y = f(x)','y = sin(x)-tan(x)')
+//[xk, k] = falsa_posicao(f, 3.0, 4.0, 1e-5, 1e-5, 100)
 
 
 //2. 𝐟(𝐱) = 𝐞^−𝐱^𝟐 − 𝐜𝐨𝐬(𝐱) no intervalo [𝟏, 𝟐], com 𝛜 = 𝟏𝟎^−𝟓
-printf("PROBLEMA 1.5 NÚMERO 2\n");
+//printf("PROBLEMA 1.5 NÚMERO 2\n");
+//deff('y = f(x)','y = exp(-x^2) - cos(x)')
+//[xk, k] = falsa_posicao(f, 1.0, 2.0, 1e-5, 1e-5, 100)
 
 //-------------Problema 1.6: Obter uma aproximação às raízes das funções----------------
 //1. 𝐠(𝐱) = 𝐱^𝟑 − 𝐱 − 𝟏 no intervalo [𝟏, 𝟐], com 𝛜 = 𝟏𝟎^−𝟔
-printf("PROBLEMA 1.6 NÚMERO 1\n");
+//printf("PROBLEMA 1.6 NÚMERO 1\n");
+//deff('y = g(x)','y = x^3 - x - 1')
+//[xk, k] = falsa_posicao(g, 1.0, 2.0, 1e-6, 1e-6, 100)
 
 //2. 𝐡(𝐱) = 𝟒𝐬𝐞𝐧(𝐱) − 𝐞^𝐱 no intervalo [𝟎, 𝟏], com 𝛜 = 𝟏𝟎^−𝟓
-printf("PROBLEMA 1.6 NÚMERO 2\n");
+//printf("PROBLEMA 1.6 NÚMERO 2\n");
+//deff('y = h(x)','y = 4*sin(x) - exp(x)')
+//[xk, k] = falsa_posicao(h, 0.0, 1.0, 1e-5, 1e-5, 100)
 //////////////////////////////////////////////////////////////////////////////////////
 //------------------------------ PARTE 2 --------------------------------------------
 //////////////////////////////////////////////////////////////////////////////////////
 
 //-------------Problema 2.1: Discuta a função 𝐟(𝐱) = 𝟐𝟑𝟎𝐱^𝟒 + 𝟏𝟖𝐱^𝟑 + 𝟗𝐱^𝟐 − 𝟐𝟐𝟏𝐱 − 9----------------
 //Intervalo: [-0.3, 1.1]
-printf("PROBLEMA 2.1\n");
+//printf("PROBLEMA 2.1\n");
+//deff('y = f(x)','y = 230*x^4+18*x^3+9*x^2-221*x-9')
+//[xk, k] = falsa_posicao(f, -0.3, 1.1, 1e-5, 1e-5, 100)
 
 
 //-------------Problema 2.2: Função de captação de energia solar----------------
 //y = f(A)', 'y = (%pi*(h/cos(A))^2 * F / (0.5*%pi*D^2*(1 + sin(A) - 0.5*cos(A))) - C
-printf("PROBLEMA 2.2\n");
+//printf("PROBLEMA 2.2\n");
 //𝐡 = 𝟑𝟎𝟎𝒎; 𝐅 = 𝟎.𝟖; 𝐃 =𝟏𝟒𝒎; 𝐂 = 𝟏𝟐𝟎0
 // Intervalo: 0 ≤ A ≤ %pi/25 (~0.1257 rad)
 
+
 //-------------Problema 2.3: Movimento de material perigoso----------------
 //d=10; 'y = p(t)', 'y = 7*(2.0 - 0.9^t) - d'
-printf("PROBLEMA 2.3\n");
+//printf("PROBLEMA 2.3\n");
+//deff('y = p(t)', 'y = 7*(2.0 - 0.9^t) - d');
+//[xk, k] = falsa_posicao(p, 0, 10, 1e-5, 1e-5, 100);
 
 //-------------Problema 2.4: Nível de oxigênio em rio----------------
 //O = 5; deff('y = C(d)', 'y = 10 - 20*(exp(-0.2*d) - exp(-0.75*d)) - O');
 printf("PROBLEMA 2.4\n");
+//deff('y = C(d)', 'y = 10 - 20*(exp(-0.2*d) - exp(-0.75*d)) - O');
+//[xk, k] = falsa_posicao(C, 0, 5, 1e-5, 1e-5, 100);
