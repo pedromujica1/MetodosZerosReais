@@ -4,7 +4,6 @@
 funcprot(0);
 clear(); clc();
 h = 300; F = 0.8; D = 14; C = 1200; //constantes exercicio 2.2
-d = 10 //constante exercicio 2.3
 O = 5 //constante exercicio 2.4
 
 printf("*** APROXIMAÇÃO PELO MÉTODO DA BISSEÇÃO ***\n\n")
@@ -45,7 +44,7 @@ raiz111 = bissecao(f, 1.0, 2.0, 1e-6, 1e-6, 100);
 //2. g(𝐱) = 𝐱^𝟐 + 𝐥𝐧(𝐱) no intervalo [𝟎,𝟓; 𝟏], com 𝛜 = 𝟏𝟎^−𝟓
 printf("PROBLEMA 1.1 NÚMERO 2\n");
 deff('y = g(x)', 'y = x^2 + log(x)');   
-raiz112 = bissecao(g, 5, 5, 1e-5, 1e-5, 100);
+raiz112 = bissecao(g, 0.5, 1.0, 1e-5, 1e-5, 100);
 
 //-------------Problema 1.2: Obter uma aproximação para primeira raiz positiva da função:----------------
 //1. 𝐟(𝐱) = 𝐞^−𝐱 − 𝐬𝐞𝐧(𝐱), com 𝛜 = 𝟏𝟎^−𝟓
@@ -120,13 +119,14 @@ bissecao(f, -0.3, 1.1, 1e-5, 1e-5, 100);
 //printf("PROBLEMA 2.2\n");
 //𝐡 = 𝟑𝟎𝟎𝒎; 𝐅 = 𝟎.𝟖; 𝐃 =𝟏𝟒𝒎; 𝐂 = 𝟏𝟐𝟎0
 // Intervalo: 0 ≤ A ≤ %pi/25 (~0.1257 rad)
-deff('y = f(A)', 'y = (%pi*(h/cos(A))^2 * F / (0.5*%pi*D^2*(1 + sin(A) - 0.5*cos(A))) - C)');
+deff('y = f(A)', 'y = (%pi*(h/cos(A))^2 * F / (0.5*%pi*D^2*(1 + sin(A) - 0.5*cos(A)))) - C');
 bissecao(f, 0, %pi/25, 1e-5, 1e-5, 100);
 
 //-------------Problema 2.3: Movimento de material perigoso----------------
 //d=10; 'y = p(t)', 'y = 7*(2.0 - 0.9^t) - d'
+d_func = 10 //constante exercicio 2.3
 printf("PROBLEMA 2.3\n");
-deff('y = p(t)', 'y = 7*(2.0 - 0.9^t) - d');
+deff('y = p(t)', 'y = 7*(2.0 - 0.9^t) - d_func');
 bissecao(p, 0, 10, 1e-5, 1e-5, 100);
 
 //-------------Problema 2.4: Nível de oxigênio em rio----------------
