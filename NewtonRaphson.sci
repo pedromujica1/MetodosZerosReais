@@ -120,20 +120,20 @@ deff('y = f1(x)', 'y = 920*x^3 + 54*x^2 + 18*x - 221')
 //𝐡 = 𝟑𝟎𝟎𝒎; 𝐅 = 𝟎.𝟖; 𝐃 =𝟏𝟒𝒎; 𝐂 = 𝟏𝟐𝟎0
 // Intervalo: 0 ≤ A ≤ %pi/25 (~0.1257 rad)
 printf("PROBLEMA 2.2\n");
-deff('y = f(A)', 'y = (%pi * (h/cos(A))^2 * F) / (0.5 * %pi * D^2 * (1 + sin(A) - 0.5 * cos(A))) - C')
-deff('y = f1(A)', 'y = ((1/cos(A))^3 * (-734.694 + (-1102.04 + 1469.39 * (1/cos(A))) * tan(A) + 1469.39 * tan(A)^2)) / (-0.5 + (1/cos(A)) + tan(A))^2')
-[xk,k] = newton_raphson(f, f1, 0.0, %pi/25, 1e-5, 1e-5, 100)
+//deff('y = f(A)', 'y = (%pi * (h/cos(A))^2 * F) / (0.5 * %pi * D^2 * (1 + sin(A) - 0.5 * cos(A))) - C')
+//deff('y = f1(A)', 'y = ((1/cos(A))^3 * (-734.694 + (-1102.04 + 1469.39 * (1/cos(A))) * tan(A) + 1469.39 * tan(A)^2)) / (-0.5 + (1/cos(A)) + tan(A))^2')
+//[xk,k] = newton_raphson(f, f1, 0.0, %pi/25, 1e-5, 1e-5, 100)
 
 //-------------Problema 2.3: Movimento de material perigoso----------------
 //d = 10
 printf("PROBLEMA 2.3\n");
-deff('y = p(t)', 'y = 7*(2.0 - 0.9^t) - d')
-deff('y = p1(t)', 'y = 0.737524*0.9^t')
-[xk,k] = newton_raphson(p, p1, 0.0, 10.0, 1e-5, 1e-5, 100)
+//deff('y = p(t)', 'y = 7*(2.0 - 0.9^t) - d')
+//deff('y = p1(t)', 'y = 0.737524*0.9^t')
+//[xk,k] = newton_raphson(p, p1, 0.0, 10.0, 1e-5, 1e-5, 100)
 
 //-------------Problema 2.4: Nível de oxigênio em rio----------------
 //O = 5
 printf("PROBLEMA 2.4\n");
-deff('y = C(d)', 'y = 10 - 20*(exp(-0.2*d) - exp(-0.75*d)) - O')
-deff('y = C1(d)', 'y = 4*exp(-0.2*d) - 15*exp(-0.75*d)')
-[xk,k] = newton_raphson(C, C1, 0.0, 1.0, 1e-5, 1e-5, 100)
+//deff('y = C(d)', 'y = 10 - 20*(exp(-0.2*d) - exp(-0.75*d)) - O')
+//deff('y = C1(d)', 'y = 4*exp(-0.2*d) - 15*exp(-0.75*d)')
+//[xk,k] = newton_raphson(C, C1, 0.0, 1.0, 1e-5, 1e-5, 100)
