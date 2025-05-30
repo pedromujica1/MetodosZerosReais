@@ -158,7 +158,7 @@ printf("PROBLEMA 1.6 NÚMERO 2\n");
 
 //-------------Problema 2.1: Discuta a função 𝐟(𝐱) = 𝟐𝟑𝟎𝐱^𝟒 + 𝟏𝟖𝐱^𝟑 + 𝟗𝐱^𝟐 − 𝟐𝟐𝟏𝐱 − 9----------------
 //Intervalo: [-0.3, 1.1]
-//printf("PROBLEMA 2.1\n");
+printf("PROBLEMA 2.1\n");
 //deff('y = f(x)', 'y = 230*x^4 + 18*x^3 + 9*x^2 - 221*x - 9');
 //gerarGrafico(f, -0.5, 1.5, -0.3, 0.0, -0.040659, "230*x^4 + 18*x^3 + 9*x^2 - 221*x - 9");
 
@@ -167,7 +167,7 @@ printf("PROBLEMA 1.6 NÚMERO 2\n");
 //y = f(A)', 'y = (%pi*(h/cos(A))^2 * F / (0.5*%pi*D^2*(1 + sin(A) - 0.5*cos(A))) - C
 //𝐡 = 𝟑𝟎𝟎𝒎; 𝐅 = 𝟎.𝟖; 𝐃 =𝟏𝟒𝒎; 𝐂 = 𝟏𝟐𝟎0
 // Intervalo: 0 ≤ A ≤ %pi/25 (~0.1257 rad)
-//printf("PROBLEMA 2.2\n");
+printf("PROBLEMA 2.2\n");
 //gerarGraficoRad();
 
 //-------------Problema 2.3: Movimento de material perigoso----------------
