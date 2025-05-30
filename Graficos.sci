@@ -1,4 +1,13 @@
- //x0, x1: intervalo total do gráfico
+//-------TRABALHO 1 - ZEROS REAIS DE FUNÇÕES REAIS----------------
+//Alunos: Pedro Miotto Mujica, Thiago Oliveira Dupim, Vinicius Castaman, Gabriel Costa
+//Gerando os gráficos das funções e suas raízes aproximadas
+
+clear();clc();
+h = 300; F = 0.8; D = 14; C = 1200; //constantes exercicio 2.2
+d = 10 //constante exercicio 2.3
+O = 5 //constante exercicio 2.4
+
+//x0, x1: intervalo total do gráfico
 //a, b: intervalo de destaque
 //raiz_aprox: valor da raiz aproximada
 //func_expr: string com a expressão da função para título e legendas
@@ -34,6 +43,45 @@ function gerarGrafico(minha_func, x0, x1, a, b, raiz_aprox, func_expr)
     legend(["Função f(x)", "Intervalo destacado [" + string(a) + "; " + string(b) + "]", "Raiz aproximada"]);
 endfunction
 
+function gerarGraficoRad()
+
+    clc;
+    clear;
+    funcprot(0);
+
+    //Constantes
+    h = 300;
+    F = 0.8;
+    D = 14;
+    C = 1200;
+
+    // Função com operações elemento a elemento
+    deff('y = f(A)', 'y = (%pi*(h./cos(A)).^2 .* F) ./ (0.5*%pi*D^2*(1 + sin(A) - 0.5*cos(A))) - C');
+
+    // Intervalo amplo para visualizar toda a curva
+    A_full = linspace(-0.2, 0.2, 1000);
+    Y_full = f(A_full);
+
+    // Intervalo específico [0, π/25] para destacar
+    A_dest = linspace(0, %pi/25, 200);
+    Y_dest = f(A_dest);
+
+    // Plot da função completa
+    plot(A_full, Y_full, 'b-');
+    xlabel("A (radianos)");
+    ylabel("f(A)");
+    title("Gráfico da função f(A) com destaque no intervalo [0, π/25]");
+    xgrid();
+
+    // Adiciona linha horizontal y = 0
+    plot([-0.2, 0.2], [0, 0], 'r--');
+
+    // Adiciona destaque sobre o intervalo [0, π/25]
+    plot(A_dest, Y_dest, 'r-', 'LineWidth', 2); // linha vermelha mais grossa
+    //legenda
+    legend(["Função f(x)", "Intervalo destacado [" + string(a) + "; " + string(b) + "]", "Raiz aproximada"]);
+
+endfunction
 
 //-------------Problema 1.1: Obter uma aproximação às raízes das funções----------------
 //1. 𝐟(𝐱) = 𝐱^𝟐 − 𝟑 no intervalo [𝟏; 𝟐], com 𝛜 = 𝟏𝟎**-6
@@ -110,19 +158,26 @@ printf("PROBLEMA 1.6 NÚMERO 2\n");
 
 //-------------Problema 2.1: Discuta a função 𝐟(𝐱) = 𝟐𝟑𝟎𝐱^𝟒 + 𝟏𝟖𝐱^𝟑 + 𝟗𝐱^𝟐 − 𝟐𝟐𝟏𝐱 − 9----------------
 //Intervalo: [-0.3, 1.1]
-printf("PROBLEMA 2.1\n");
+//printf("PROBLEMA 2.1\n");
+//deff('y = f(x)', 'y = 230*x^4 + 18*x^3 + 9*x^2 - 221*x - 9');
+//gerarGrafico(f, -0.5, 1.5, -0.3, 0.0, -0.040659, "230*x^4 + 18*x^3 + 9*x^2 - 221*x - 9");
 
 
 //-------------Problema 2.2: Função de captação de energia solar----------------
 //y = f(A)', 'y = (%pi*(h/cos(A))^2 * F / (0.5*%pi*D^2*(1 + sin(A) - 0.5*cos(A))) - C
-printf("PROBLEMA 2.2\n");
 //𝐡 = 𝟑𝟎𝟎𝒎; 𝐅 = 𝟎.𝟖; 𝐃 =𝟏𝟒𝒎; 𝐂 = 𝟏𝟐𝟎0
 // Intervalo: 0 ≤ A ≤ %pi/25 (~0.1257 rad)
+//printf("PROBLEMA 2.2\n");
+//gerarGraficoRad();
 
 //-------------Problema 2.3: Movimento de material perigoso----------------
 //d=10; 'y = p(t)', 'y = 7*(2.0 - 0.9^t) - d'
 printf("PROBLEMA 2.3\n");
+//deff('y = p(t)', 'y = 7*(2.0 - 0.9^t) - d');
+//gerarGrafico(p, -2, 20, 0, 10, 5.311436, "7*(2.0 - 0.9^t) - d");
 
 //-------------Problema 2.4: Nível de oxigênio em rio----------------
 //O = 5; deff('y = C(d)', 'y = 10 - 20*(exp(-0.2*d) - exp(-0.75*d)) - O');
 printf("PROBLEMA 2.4\n");
+//deff('y = C(d)', 'y = 10 - 20*(exp(-0.2*d) - exp(-0.75*d)) - O');
+//gerarGrafico(C, -2, 10, 0, 5, 1.0, "10 - 20*(exp(-0.2*d) - exp(-0.75*d)) - O");

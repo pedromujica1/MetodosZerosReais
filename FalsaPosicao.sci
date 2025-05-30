@@ -107,7 +107,7 @@ endfunction
 //Intervalo: [-0.3, 1.1]
 //printf("PROBLEMA 2.1\n");
 //deff('y = f(x)','y = 230*x^4+18*x^3+9*x^2-221*x-9')
-//[xk, k] = falsa_posicao(f, -0.3, 1.1, 1e-5, 1e-5, 100)
+//[xk, k] = falsa_posicao(f, -0.3, 0.0, 1e-5, 1e-5, 100)
 
 
 //-------------Problema 2.2: Função de captação de energia solar----------------
@@ -115,11 +115,12 @@ endfunction
 //printf("PROBLEMA 2.2\n");
 //𝐡 = 𝟑𝟎𝟎𝒎; 𝐅 = 𝟎.𝟖; 𝐃 =𝟏𝟒𝒎; 𝐂 = 𝟏𝟐𝟎0
 // Intervalo: 0 ≤ A ≤ %pi/25 (~0.1257 rad)
-
+//deff('y = f(A)', 'y = (%pi * (h/cos(A))^2 * F) / (0.5 * %pi * D^2 * (1 + sin(A) - 0.5 * cos(A))) - C')
+//[xk,k] = falsa_posicao(f, 0.0, %pi/25, 1e-5, 1e-5, 100)
 
 //-------------Problema 2.3: Movimento de material perigoso----------------
 //d=10; 'y = p(t)', 'y = 7*(2.0 - 0.9^t) - d'
-//printf("PROBLEMA 2.3\n");
+printf("PROBLEMA 2.3\n");
 //deff('y = p(t)', 'y = 7*(2.0 - 0.9^t) - d');
 //[xk, k] = falsa_posicao(p, 0, 10, 1e-5, 1e-5, 100);
 
