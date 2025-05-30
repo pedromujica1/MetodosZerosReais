@@ -45,7 +45,7 @@ printf("PROBLEMA 1.1 NÚMERO 2\n");
 printf("PROBLEMA 1.2 NÚMERO 1\n");
 //deff('y = f(x)', 'y = exp(-x) - sin(x)')
 //deff('y = f1(x)', 'y = -exp(-x) - cos(x)')
-[xk,k] = newton_raphson(f, f1, 0.5, 1.0, 1e-5, 1e-5, 100)
+//[xk,k] = newton_raphson(f, f1, 0.5, 1.0, 1e-5, 1e-5, 100)
 
 //2. 𝐟(𝐱) = 𝐱 𝐥𝐧(𝐱) − 𝟑.𝟐 no intervalo [𝟐, 𝟑], com 𝛜 = 𝟏𝟎^−𝟔
 printf("PROBLEMA 1.2 NÚMERO 2\n");
@@ -127,9 +127,9 @@ printf("PROBLEMA 2.2\n");
 //-------------Problema 2.3: Movimento de material perigoso----------------
 //d = 10
 printf("PROBLEMA 2.3\n");
-//deff('y = p(t)', 'y = 7*(2.0 - 0.9^t) - d')
-//deff('y = p1(t)', 'y = 0.737524*0.9^t')
-//[xk,k] = newton_raphson(p, p1, 0.0, 10.0, 1e-5, 1e-5, 100)
+deff('y = p(t)', 'y = 7*(2.0 - 0.9^t) - d')
+deff('y = p1(t)', 'y = 0.737524*0.9^t')
+[xk,k] = newton_raphson(p, p1, 0.0, 10.0, 1e-5, 1e-5, 100)
 
 //-------------Problema 2.4: Nível de oxigênio em rio----------------
 //O = 5

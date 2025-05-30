@@ -122,7 +122,7 @@ endfunction
 //d=10; 'y = p(t)', 'y = 7*(2.0 - 0.9^t) - d'
 //printf("PROBLEMA 2.3\n");
 //deff('y = p(t)', 'y = 7*(2.0 - 0.9^t) - d');
-//[xk, k] = falsa_posicao(p, 0, 10, 1e-5, 1e-5, 100);
+[xk, k] = falsa_posicao(p, 0, 10, 1e-5, 1e-5, 100);
 
 //-------------Problema 2.4: Nível de oxigênio em rio----------------
 //O = 5; deff('y = C(d)', 'y = 10 - 20*(exp(-0.2*d) - exp(-0.75*d)) - O');
